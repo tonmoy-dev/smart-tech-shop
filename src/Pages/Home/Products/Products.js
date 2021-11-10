@@ -16,9 +16,9 @@ const Products = () => {
         <div>
             <Box sx={{ flexGrow: 1 }}>
                 <Container>
-                <Typography sx={{ my:4, textAlign:'center' }} variant="h4" component="div">
-         OUR BEST PRODUCTS
-        </Typography>
+                    <Typography sx={{ my: 4, textAlign: 'center' }} variant="h4" component="div">
+                        OUR BEST PRODUCTS
+                    </Typography>
                     <Grid container spacing={2}>
                         {
                             products.map(product =>
