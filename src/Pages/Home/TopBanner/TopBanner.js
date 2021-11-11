@@ -2,6 +2,7 @@ import { Button, Container } from "@mui/material";
 import Typography from '@mui/material/Typography';
 import { Box } from "@mui/system";
 import React from "react";
+import { Link } from "react-router-dom";
 import Img from "../../../images/headphone-banner.jpg";
 
 // background image
@@ -32,7 +33,9 @@ const TopBanner = () => {
                     <Typography sx={{ mb:5}} variant="subtitle2" gutterBottom component="div">
                         Custom Print & Innovative Design
                     </Typography>
-                    <Button variant="contained">Explore</Button>
+                    <Button variant="contained">
+                        <Link style={{textDecoration:'none',color:'#fff'}} to="/exploreProducts">Explore</Link>
+                    </Button>
                 </Box>
             </Container>
             

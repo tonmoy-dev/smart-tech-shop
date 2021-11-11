@@ -1,7 +1,7 @@
 import { Container, Grid, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React, { useEffect, useState } from "react";
-import Product from "../Product/Product";
+import Product from "../../Shared/Product/Product";
 
 const Products = () => {
     const [products, setProducts] = useState([]);

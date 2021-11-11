@@ -1,6 +1,5 @@
-
 import React from "react";
-const Review = () => {
+const  MyOrders = () => {
     return (
         <div>
 
@@ -8,4 +7,4 @@ const Review = () => {
     );
 };
 
-export default Review;
+export default MyOrders ;

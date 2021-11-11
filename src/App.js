@@ -3,6 +3,7 @@ import {
 } from "react-router-dom";
 import './App.css';
 import AuthProvider from "./Context/AuthProvider";
+import ExploreProducts from "./Pages/ExploreProducts/ExploreProducts";
 import Home from "./Pages/Home/Home/Home";
 import Login from "./Pages/Login/Login/Login";
 import Register from "./Pages/Login/Register/Register";
@@ -24,6 +25,9 @@ function App() {
             </Route>
             <Route path="/register">
               <Register></Register>
+            </Route>
+            <Route path="/exploreProducts">
+              <ExploreProducts></ExploreProducts>
             </Route>
           </Switch>
         </Router>
