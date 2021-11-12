@@ -7,12 +7,17 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import { Box } from '@mui/system';
 import * as React from 'react';
-import useAuth from '../../../../Hooks/useAuth';
-import useCustomStyles from '../../../../Hooks/useCustomStyles';
+import useAuth from '../../../../../Hooks/useAuth';
+import useCustomStyles from '../../../../../Hooks/useCustomStyles';
+import OrderCancelModal from '../OrderCancelModal/OrderCancelModal';
 
-const ManageAllOrders = () => {
+const MyOrders = () => {
     const [orders, setOrders] = React.useState([]);
-    
+    // modal states
+    const [openCancellation, setOpenCancellation] = React.useState(false);
+    const handleCancellationOpen = () => setOpenCancellation(true);
+    const handleCancellationClose = () => setOpenCancellation(false);
+
     const { user } = useAuth();
     React.useEffect(() => {
         fetch(`http://localhost:5000/orders/${user.email}`)
@@ -34,7 +39,7 @@ const ManageAllOrders = () => {
                             <StyledTableCell>Product Name</StyledTableCell>
                             <StyledTableCell align="center">Price</StyledTableCell>
                             <StyledTableCell align="center">Email</StyledTableCell>
-                            <StyledTableCell align="center">Update Status</StyledTableCell>
+                            <StyledTableCell align="center">Manage Order</StyledTableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
@@ -46,17 +51,24 @@ const ManageAllOrders = () => {
                                 <StyledTableCell align="center">{order.productPrice}</StyledTableCell>
                                 <StyledTableCell align="center">{order.email}</StyledTableCell>
                                 <StyledTableCell align="center">
-                                    <Button variant="contained">Pending</Button>
+                                    <Button variant="contained" onClick={handleCancellationOpen}>Cancel</Button>
                                 </StyledTableCell>
                             </StyledTableRow>
                         ))}
                     </TableBody>
                 </Table>
             </TableContainer>
-            
+            <OrderCancelModal
+                 orders={orders}
+                openCancellation={openCancellation}
+                setOpenCancellation={setOpenCancellation}
+                handleCancellationClose={handleCancellationClose}
+                setOrders={setOrders}
+            >
+            </OrderCancelModal>
         </Box>
     
     );
 };
 
-export default ManageAllOrders;
+export default MyOrders;

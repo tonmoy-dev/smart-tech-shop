@@ -5,78 +5,94 @@ import TableRow from '@mui/material/TableRow';
 import { makeStyles } from '@mui/styles';
 
 const useCustomStyles = () => {
-    const theme = useTheme();
+  const theme = useTheme();
 
-    // navigation style
-    const useNavStyle = makeStyles({
-        navItem: {
-            color: '#fff',
-            textDecoration: 'none'
-        },
-        navIcon: {
-            [theme.breakpoints.up('sm')]: {
-                display:'none',
-              }
-        },
-        navItemContainer: {
-            [theme.breakpoints.down('sm')]: {
-                display:'none',
-              }
-        },
-        navLogo: {
-            [theme.breakpoints.down('sm')]: {
-                textAlign:'right',
-              }
-        },
-        drawerLink: {
-            textDecoration: 'none',
-            color: '#000',
-            padding: '20px 0 20px 10px'
-        },
-        drawerItem: {
+  // navigation style
+  const useNavStyle = makeStyles({
+    navItem: {
+      color: '#fff',
+      textDecoration: 'none'
+    },
+    navIcon: {
+      [theme.breakpoints.up('sm')]: {
+        display: 'none',
+      }
+    },
+    navItemContainer: {
+      [theme.breakpoints.down('sm')]: {
+        display: 'none',
+      }
+    },
+    navLogo: {
+      [theme.breakpoints.down('sm')]: {
+        textAlign: 'right',
+      }
+    },
+    drawerLink: {
+      textDecoration: 'none',
+      color: '#000',
+      padding: '20px 0 20px 10px'
+    },
+    drawerItem: {
             
-        }
-    });
-    const { navItem, navIcon, navLogo, navItemContainer, drawerLink, drawerItem } = useNavStyle();
-
-    // form style
-    const formStyle = {
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        JustifyContent: 'center',   
     }
-    const fieldStyle = {
-        width: '80%',
-        marginBottom: '10px',
-        padding: '20px',
-        resize:'none'
-    }
+  });
+  const { navItem, navIcon, navLogo, navItemContainer, drawerLink, drawerItem } = useNavStyle();
 
-    // table style
-    const StyledTableCell = styled(TableCell)(({ theme }) => ({
-        [`&.${tableCellClasses.head}`]: {
-          backgroundColor: theme.palette.common.black,
-          color: theme.palette.common.white,
-        },
-        [`&.${tableCellClasses.body}`]: {
-          fontSize: 14,
-        },
-      }));
-      const StyledTableRow = styled(TableRow)(({ theme }) => ({
-        '&:nth-of-type(odd)': {
-          backgroundColor: theme.palette.action.hover,
-        },
-        // hide last border
-        '&:last-child td, &:last-child th': {
-          border: 0,
-        },
-      }));
+  // form style
+  const formStyle = {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    JustifyContent: 'center',
+  }
+  const fieldStyle = {
+    width: '80%',
+    marginBottom: '10px',
+    padding: '16px',
+    resize: 'none',
+    fontSize: '14px',
+    fontFamily: 'Roboto'
+  };
 
+  // table style
+  const StyledTableCell = styled(TableCell)(({ theme }) => ({
+    [`&.${tableCellClasses.head}`]: {
+      backgroundColor: theme.palette.common.black,
+      color: theme.palette.common.white,
+    },
+    [`&.${tableCellClasses.body}`]: {
+      fontSize: 14,
+    },
+  }));
+  const StyledTableRow = styled(TableRow)(({ theme }) => ({
+    '&:nth-of-type(odd)': {
+      backgroundColor: theme.palette.action.hover,
+    },
+    // hide last border
+    '&:last-child td, &:last-child th': {
+      border: 0,
+    },
+  }));
 
-    return {
-        navItem, navIcon, navLogo, navItemContainer, drawerLink, drawerItem,formStyle,fieldStyle,StyledTableCell,StyledTableRow
-    };
-}
+  // purchase modal style
+  const modalStyle = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: 400,
+    bgcolor: '#fff',
+    border: '2px solid #ddd',
+    boxShadow: 24,
+    padding: '40px 0',
+    textAlign: 'center',
+    borderRadius: '5px'
+  };
+
+  return {
+    navItem, navIcon, navLogo, navItemContainer, drawerLink, drawerItem, formStyle, fieldStyle, StyledTableCell, StyledTableRow,modalStyle
+  };
+};
 
 export default useCustomStyles;

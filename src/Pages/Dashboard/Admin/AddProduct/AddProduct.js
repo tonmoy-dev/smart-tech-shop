@@ -3,21 +3,26 @@ import Card from '@mui/material/Card';
 import React from "react";
 import { useForm } from "react-hook-form";
 import useCustomStyles from '../../../../Hooks/useCustomStyles';
-// const axios = require('axios');
 
 const AddProduct = () => {
     const { register, handleSubmit, reset } = useForm();
     const {formStyle,fieldStyle} = useCustomStyles();
     const onSubmit = data => {
-        /* axios.post('https://rocky-brushlands-10899.herokuapp.com/booking_places', data)
-            .then(res => {
-                if (res.data.insertedId) {
-                    alert('Added succesfully');
+        fetch('http://localhost:5000/products', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.insertedId) {
+                    alert('successfully added');
                     reset();
             }
-        }) */
+        })
     };
-    
 
     return (
         <div>
@@ -29,10 +34,10 @@ const AddProduct = () => {
                         </Typography>
                 
                         <form style={formStyle} onSubmit={handleSubmit(onSubmit)}>
-                            <input style={fieldStyle} placeholder="Insert Image Url" {...register("img")} />
-                            <input style={fieldStyle} placeholder="Booking Place Name" {...register("name", { required: true, maxLength: 20 })} />
-                            <textarea style={fieldStyle} placeholder="Description" {...register("description")} />
-                            <input style={fieldStyle} placeholder="Booking Price" type="number" {...register("price")} />
+                            <input style={fieldStyle} placeholder="Product Image Url" {...register("img",{ required: true })} />
+                            <input style={fieldStyle} placeholder="Product Name" {...register("name", { required: true })} />
+                            <textarea style={fieldStyle} placeholder="Product Description" {...register("description",{ required: true })} />
+                            <input style={fieldStyle} placeholder="Product Price" type="number" {...register("price",{ required: true })} />
                             <input style={fieldStyle} type="submit" />
                         </form>
                     </Card>

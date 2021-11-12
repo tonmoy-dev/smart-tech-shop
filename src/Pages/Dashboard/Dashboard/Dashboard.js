@@ -16,7 +16,7 @@ import AddProduct from '../Admin/AddProduct/AddProduct';
 import MakeAdmin from '../Admin/MakeAdmin/MakeAdmin';
 import ManageAllOrders from '../Admin/ManageAllOrders/ManageAllOrders';
 import ManageProducts from '../Admin/ManageProducts/ManageProducts';
-import MyOrders from '../User/MyOrders/MyOrders';
+import MyOrders from '../User/MyOrders/MyOrders/MyOrders';
 import Pay from '../User/Pay/Pay';
 import Review from '../User/Review/Review';
 
@@ -75,7 +75,7 @@ function Dashboard(props) {
                     </ListItemText>
                 </ListItem>
                 <Divider />
-                <ListItem className={drawerItem} button >
+                <ListItem sx={{background:'#2E9DE6'}} className={drawerItem} button >
                     <ListItemText>
                         <Link className={drawerLink} to={`${url}/addProduct`}>Add A Product</Link>
                     </ListItemText>
