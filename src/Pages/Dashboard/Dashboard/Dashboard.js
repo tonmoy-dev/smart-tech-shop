@@ -50,7 +50,7 @@ function Dashboard(props) {
                 <Divider />
                 <ListItem className={drawerItem} button >
                     <ListItemText>
-                        <Link className={drawerLink} to={`${url}`}>Dashboard</Link>
+                        <Link className={drawerLink} to={`${url}`}>My Orders</Link>
                     </ListItemText>
                 </ListItem>
                 <Divider />

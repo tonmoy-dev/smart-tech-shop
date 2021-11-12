@@ -1,8 +1,13 @@
 import { useTheme } from '@mui/material';
+import { styled } from '@mui/material/styles';
+import TableCell, { tableCellClasses } from '@mui/material/TableCell';
+import TableRow from '@mui/material/TableRow';
 import { makeStyles } from '@mui/styles';
 
 const useCustomStyles = () => {
     const theme = useTheme();
+
+    // navigation style
     const useNavStyle = makeStyles({
         navItem: {
             color: '#fff',
@@ -32,6 +37,9 @@ const useCustomStyles = () => {
             
         }
     });
+    const { navItem, navIcon, navLogo, navItemContainer, drawerLink, drawerItem } = useNavStyle();
+
+    // form style
     const formStyle = {
         display: 'flex',
         flexDirection: 'column',
@@ -45,11 +53,29 @@ const useCustomStyles = () => {
         resize:'none'
     }
 
+    // table style
+    const StyledTableCell = styled(TableCell)(({ theme }) => ({
+        [`&.${tableCellClasses.head}`]: {
+          backgroundColor: theme.palette.common.black,
+          color: theme.palette.common.white,
+        },
+        [`&.${tableCellClasses.body}`]: {
+          fontSize: 14,
+        },
+      }));
+      const StyledTableRow = styled(TableRow)(({ theme }) => ({
+        '&:nth-of-type(odd)': {
+          backgroundColor: theme.palette.action.hover,
+        },
+        // hide last border
+        '&:last-child td, &:last-child th': {
+          border: 0,
+        },
+      }));
 
-    const { navItem, navIcon, navLogo, navItemContainer, drawerLink, drawerItem } = useNavStyle();
 
     return {
-        navItem, navIcon, navLogo, navItemContainer, drawerLink, drawerItem,formStyle,fieldStyle
+        navItem, navIcon, navLogo, navItemContainer, drawerLink, drawerItem,formStyle,fieldStyle,StyledTableCell,StyledTableRow
     };
 }
 
