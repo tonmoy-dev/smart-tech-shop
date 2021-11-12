@@ -1,9 +1,30 @@
+import { CircularProgress } from "@mui/material";
 import React from "react";
-const PrivateRoute = () => {
-    return (
-        <div>
+import { Redirect, Route } from "react-router";
+import useAuth from "../../../Hooks/useAuth";
 
-        </div>
+const PrivateRoute = ({ children, ...rest }) => {
+    const { user, loading } = useAuth();
+    if (loading) {
+        return <CircularProgress/>
+    }
+
+    return (
+        <Route
+            {...rest}
+            render={({ location }) =>
+                user.email ? (
+                    children
+                ) : (
+                    <Redirect
+                        to={{
+                            pathname: "/login",
+                            state: { from: location }
+                        }}
+                    />
+                )
+            }
+        />
     );
 };
 

@@ -2,7 +2,7 @@ import React from "react";
 const  MyOrders = () => {
     return (
         <div>
-
+            <h3>My All Orders</h3>
         </div>
     );
 };

@@ -1,11 +1,21 @@
-
-import React from "react";
+import React, { useEffect, useState } from "react";
 const PurchaseProduct = () => {
+    const [product, setProduct] = useState({});
+    useEffect(() => {
+        
+    },[])
     return (
-        <div>
+        <>
+            <Grid container spacing={2}>
+                <Grid item xs={12} md={6}>
 
-        </div>
+                </Grid>
+                <Grid item xs={12} md={6}>
+
+                </Grid>
+            </Grid>
+        </>
     );
 };
 
-export default PurchaseProduct ;
+export default PurchaseProduct;

@@ -1,5 +1,5 @@
 import MenuIcon from '@mui/icons-material/Menu';
-import { Button, Typography, useTheme } from '@mui/material';
+import { Button, Typography } from '@mui/material';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
@@ -9,47 +9,16 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import Toolbar from '@mui/material/Toolbar';
-import { makeStyles } from '@mui/styles';
 import React from "react";
 import { Link } from 'react-router-dom';
 import useAuth from '../../../Hooks/useAuth';
+import useCustomStyles from '../../../Hooks/useCustomStyles';
 
 const Navigation = () => {
     const { user, logOut } = useAuth();
-
     const [state, setState] = React.useState(false);
 
-    const theme = useTheme();
-    const useNavStyle = makeStyles({
-        navItem: {
-            color: '#fff',
-            textDecoration: 'none'
-        },
-        navIcon: {
-            [theme.breakpoints.up('sm')]: {
-                display:'none',
-              }
-        },
-        navItemContainer: {
-            [theme.breakpoints.down('sm')]: {
-                display:'none',
-              }
-        },
-        navLogo: {
-            [theme.breakpoints.down('sm')]: {
-                textAlign:'right',
-              }
-        },
-        drawerLink: {
-            textDecoration: 'none',
-            color: '#000',
-        },
-        drawerItem: {
-            padding: '20px 0 20px 30px !important'
-        }
-    });
-    const { navItem, navIcon, navLogo, navItemContainer, drawerLink, drawerItem } = useNavStyle();
-
+    const { navItem, navIcon, navLogo, navItemContainer, drawerLink, drawerItem } = useCustomStyles();
     const list = (
         <Box
             sx={{ width: 250 }}
@@ -65,7 +34,7 @@ const Navigation = () => {
                 </ListItem>
                 <Divider />
                 <ListItem className={drawerItem} button >
-                    <ListItemText> <Link className={drawerLink} to="/">Explore</Link> </ListItemText>
+                    <ListItemText> <Link className={drawerLink} to="/dashboard">Dashboard</Link> </ListItemText>
                 </ListItem>
                 <Divider />
             </List>
@@ -93,6 +62,8 @@ const Navigation = () => {
                             SmartTechShop
                         </Typography>
                         <Box className={navItemContainer}>
+                            <Link className={navItem} to="/"><Button variant="contained">Home</Button></Link>
+                            <Link className={navItem} to="/dashboard"><Button variant="contained">Dashboard</Button></Link>
                             {
                                 user.email ?
                                     <Button onClick={logOut} variant="contained">LogOut</Button>
@@ -102,7 +73,6 @@ const Navigation = () => {
                                         <Button variant="contained">Login</Button>
                                     </Link>
                             }
-                            <Link className={navItem} to="/"><Button variant="contained">Home</Button></Link>
                         </Box>
                     
                     </Toolbar>
