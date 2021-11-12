@@ -7,7 +7,7 @@ import Product from "../Shared/Product/Product";
 const ExploreProducts = () => {
     const [products, setProducts] = useState([]);
     useEffect(() => {
-        fetch('./fakeData.json')
+        fetch('http://localhost:5000/products')
             .then(res => res.json())
             .then(data => setProducts(data))
         

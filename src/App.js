@@ -9,6 +9,7 @@ import Home from "./Pages/Home/Home/Home";
 import Login from "./Pages/Login/Login/Login";
 import PrivateRoute from "./Pages/Login/PrivateRoute/PrivateRoute";
 import Register from "./Pages/Login/Register/Register";
+import PurchaseProduct from "./Pages/PurchaseProduct/PurchaseProduct";
 
 function App() {
   return (
@@ -33,6 +34,9 @@ function App() {
             </PrivateRoute>
             <Route path="/dashboard">
               <Dashboard></Dashboard>
+            </Route>
+            <Route path="/purchaseProduct/:productId">
+              <PurchaseProduct></PurchaseProduct>
             </Route>
           </Switch>
         </Router>
