@@ -7,25 +7,23 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import { Box } from '@mui/system';
 import * as React from 'react';
-import useAuth from '../../../../Hooks/useAuth';
 import useCustomStyles from '../../../../Hooks/useCustomStyles';
 
 const ManageAllOrders = () => {
     const [orders, setOrders] = React.useState([]);
     
-    const { user } = useAuth();
     React.useEffect(() => {
-        fetch(`http://localhost:5000/orders/${user.email}`)
+        fetch(`http://localhost:5000/orders`)
             .then(res => res.json())
             .then(data => setOrders(data))
         
-    }, [user.email]);
+    }, []);
     const { StyledTableCell, StyledTableRow } = useCustomStyles();
     
     return (
         <Box>
-            <Typography sx={{ textAlign: 'center' }} variant="h5" component="div" gutterBottom>
-                My Orders
+            <Typography sx={{ textAlign: 'left', my:2 }} variant="h5" component="div" gutterBottom>
+                Manage All Orders
             </Typography>
             <TableContainer component={Paper}>
                 <Table sx={{ minWidth: 700 }} aria-label="customized table">
@@ -43,7 +41,7 @@ const ManageAllOrders = () => {
                                 <StyledTableCell component="th" scope="row">
                                     {order.productName}
                                 </StyledTableCell>
-                                <StyledTableCell align="center">{order.productPrice}</StyledTableCell>
+                                <StyledTableCell align="center">${order.productPrice}</StyledTableCell>
                                 <StyledTableCell align="center">{order.email}</StyledTableCell>
                                 <StyledTableCell align="center">
                                     <Button variant="contained">Pending</Button>

@@ -58,8 +58,9 @@ const useCustomStyles = () => {
   // table style
   const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
-      backgroundColor: theme.palette.common.black,
+      backgroundColor: theme.palette.primary.dark,
       color: theme.palette.common.white,
+      fontSize: 16,
     },
     [`&.${tableCellClasses.body}`]: {
       fontSize: 14,

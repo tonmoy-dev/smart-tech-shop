@@ -4,7 +4,6 @@ import { Alert, Button, CircularProgress, Container, FormControl, Grid, IconButt
 import React, { useState } from "react";
 import { NavLink, useHistory, useLocation } from "react-router-dom";
 import useAuth from '../../../Hooks/useAuth';
-import Navigation from '../../Shared/Navigation/Navigation';
 
 const Login = () => {
     const [userLoginData, setUserLoginData] = useState({});
@@ -28,7 +27,6 @@ const Login = () => {
         });
     };
     const handleMouseDownPassword = (event) => {
-        logInUser(userLoginData.email, userLoginData.password, location, history);
         event.preventDefault();
     };
 
@@ -43,6 +41,7 @@ const Login = () => {
 
     // handle Login Submit
     const handleLogInSubmit = e => {
+        logInUser(userLoginData.email, userLoginData.password, location, history);
         e.preventDefault();
     }
 
@@ -53,7 +52,6 @@ const Login = () => {
 
     return (
         <Container>
-            <Navigation></Navigation>
             <Grid container spacing={0}>
                 <Grid item sx={{ mt: 10, p: 3, mx: 'auto', backgroundColor: '#fff' }} xs={8} md={4}>
                     <Typography sx={{ textAlign: 'center' }} variant="h4" gutterBottom>Login</Typography>
@@ -96,6 +94,7 @@ const Login = () => {
                             to="/register">
                             <Button style={{ width: '100%', mx: 'auto' }} variant="text">New User? Please Register</Button>
                         </NavLink>
+                        {loading && <CircularProgress/>}
                         {
                             user?.email && <Alert severity="success">Login successfully!</Alert>
                         }
@@ -104,9 +103,6 @@ const Login = () => {
                         }
                         <Button sx={{ width: '100%', mt: 2 }} onClick={handleGoogleSignIn} variant="contained">Continue With Google</Button>
                     </form>
-                    {
-                        loading && <CircularProgress />
-                    }
                 </Grid>
             </Grid>
         </Container>

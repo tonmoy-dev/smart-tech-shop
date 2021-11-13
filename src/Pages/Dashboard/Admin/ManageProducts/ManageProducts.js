@@ -1,4 +1,4 @@
-import { Typography } from '@mui/material';
+import { Button, Typography } from '@mui/material';
 import Paper from '@mui/material/Paper';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -9,50 +9,52 @@ import { Box } from '@mui/system';
 import * as React from 'react';
 import useCustomStyles from '../../../../Hooks/useCustomStyles';
 
-function createData(name, calories, fat, carbs, protein) {
-  return { name, calories, fat, carbs, protein };
-}
+const ManageProducts = () => {
+    const [products, setProducts] = React.useState([]);
 
-const rows = [
-  createData('Frozen yoghurt', 159,'roxen505@gmail.com', 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
-];
-
-export default function ManageProducts() {
-    const { StyledTableCell,StyledTableRow} = useCustomStyles();
+    React.useEffect(() => {
+        fetch(`http://localhost:5000/products`)
+            .then(res => res.json())
+            .then(data => setProducts(data))
+        
+    }, []);
+    const { StyledTableCell, StyledTableRow } = useCustomStyles();
+    
     return (
         <Box>
-            <Typography sx={{textAlign:'center'}} variant="h5" component="div" gutterBottom>
-        Manage Products
-      </Typography>
+            <Typography sx={{ textAlign: 'left', my:2 }} variant="h5" component="div" gutterBottom>
+                Manage All products
+            </Typography>
             <TableContainer component={Paper}>
                 <Table sx={{ minWidth: 'auto' }} aria-label="customized table">
                     <TableHead>
                         <TableRow>
-                            <StyledTableCell>Order Id</StyledTableCell>
-                            <StyledTableCell align="center">Order Name</StyledTableCell>
-                            <StyledTableCell align="center">Email</StyledTableCell>
-                            <StyledTableCell align="center">Manage Order</StyledTableCell>
+                            <StyledTableCell>Product Image</StyledTableCell>
+                            <StyledTableCell align="center">Product Name</StyledTableCell>
+                            <StyledTableCell align="center">Product Price</StyledTableCell>
+                            <StyledTableCell align="center">Manage Product</StyledTableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {rows.map((row) => (
-                            <StyledTableRow key={row.name}>
+                        {products.map((product) => (
+                            <StyledTableRow key={product._id}>
                                 <StyledTableCell component="th" scope="row">
-                                    {row.name}
+                                    <img style={{width:'40px'}} src={product.img} alt="" />
                                 </StyledTableCell>
-                                <StyledTableCell align="center">{row.calories}</StyledTableCell>
-                                <StyledTableCell align="center">{row.fat}</StyledTableCell>
-                                <StyledTableCell align="center">{row.carbs}</StyledTableCell>
+                                <StyledTableCell align="center">{product.name}</StyledTableCell>
+                                <StyledTableCell align="center">${product.price}</StyledTableCell>
+                                <StyledTableCell align="center">
+                                    <Button variant="contained">Delete</Button>
+                                </StyledTableCell>
                             </StyledTableRow>
                         ))}
                     </TableBody>
                 </Table>
             </TableContainer>
+            
         </Box>
     
     );
-}
+};
+
+export default ManageProducts;

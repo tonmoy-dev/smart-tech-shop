@@ -29,7 +29,7 @@ const MyOrders = () => {
     
     return (
         <Box>
-            <Typography sx={{ textAlign: 'center' }} variant="h5" component="div" gutterBottom>
+            <Typography sx={{ textAlign: 'left', my:2 }} variant="h5" component="div" gutterBottom>
                 My Orders
             </Typography>
             <TableContainer component={Paper}>
@@ -48,7 +48,7 @@ const MyOrders = () => {
                                 <StyledTableCell component="th" scope="row">
                                     {order.productName}
                                 </StyledTableCell>
-                                <StyledTableCell align="center">{order.productPrice}</StyledTableCell>
+                                <StyledTableCell align="center">${order.productPrice}</StyledTableCell>
                                 <StyledTableCell align="center">{order.email}</StyledTableCell>
                                 <StyledTableCell align="center">
                                     <Button variant="contained" onClick={handleCancellationOpen}>Cancel</Button>

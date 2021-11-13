@@ -4,7 +4,6 @@ import { Alert, Button, CircularProgress, Container, FormControl, Grid, IconButt
 import React, { useState } from "react";
 import { NavLink, useHistory, useLocation } from "react-router-dom";
 import useAuth from '../../../Hooks/useAuth';
-import Navigation from '../../Shared/Navigation/Navigation';
 
 const Register = () => {
     const [userRegisterData, setUserRegisterData] = useState({});
@@ -57,71 +56,72 @@ const Register = () => {
 
     return (
         <Container>
-            <Navigation></Navigation>
             <Grid container spacing={0}>
                 <Grid item sx={{ mt: 10, p: 3, mx: 'auto', backgroundColor: '#fff' }} xs={8} md={4}>
                     <Typography sx={{ textAlign: 'center' }} variant="h4" gutterBottom>Register</Typography>
-                    <form onSubmit={handleRegisterSubmit} style={{ width: '80%', margin: ' 0 auto' }}>
+                    {
+                        !loading && <form onSubmit={handleRegisterSubmit} style={{ width: '80%', margin: ' 0 auto' }}>
 
-                        <TextField sx={{ width: '100%', mb: 2 }}
-                            id="outlined-basic"
-                            label="Name"
-                            name="name"
-                            type="text"
-                            onBlur={handleInputOnBlur}
-                            variant="outlined" />
-                        <TextField sx={{ width: '100%', mb: 2 }}
-                            id="outlined-basic"
-                            label="Email"
-                            name="email"
-                            onBlur={handleInputOnBlur}
-                            variant="outlined" />
-                        
-                        <FormControl sx={{ width: '100%', mb: 2 }} variant="outlined">
-                            <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
-                            <OutlinedInput
-                                id="outlined-adornment-password"
-                                type={values.showPassword ? 'text' : 'password'}
-                                value={values.password}
-                                onChange={handleChange('password')}
-                                endAdornment={
-                                    <InputAdornment position="end">
-                                        <IconButton
-                                            aria-label="toggle password visibility"
-                                            onClick={handleClickShowPassword}
-                                            onMouseDown={handleMouseDownPassword}
-                                            edge="end"
-                                        >
-                                            {values.showPassword ? <VisibilityOff /> : <Visibility />}
-                                        </IconButton>
-                                    </InputAdornment>
-                                }
-                                label="Password"
-                                name="password"
+                            <TextField sx={{ width: '100%', mb: 2 }}
+                                id="outlined-basic"
+                                label="Name"
+                                name="name"
+                                type="text"
                                 onBlur={handleInputOnBlur}
-                            />
-                        </FormControl>
-                        <TextField sx={{ width: '100%', mb: 2 }}
-                            id="outlined-basic"
-                            label="Confirm Password"
-                            name="password2"
-                            type="password"
-                            onBlur={handleInputOnBlur}
-                            variant="outlined" />
-                        <Button sx={{ width: '100%', mb: 2 }} type="submit" variant="contained">Register Now</Button>
-                        <NavLink
-                            style={{ textDecoration: 'none' }}
-                            to="/login">
-                            <Button style={{ width: '100%', mx: 'auto' }} variant="text">Existing User? Please Login</Button>
-                        </NavLink>
-                        {
-                            user?.email && <Alert severity="success">Login successfully!</Alert>
-                        }
-                        {
-                            authError && <Alert severity="error">{authError}</Alert>
-                        }
-                        <Button sx={{ width: '100%', mt: 2 }} onClick={handleGoogleSignIn} variant="contained">Continue With Google</Button>
-                    </form>                  
+                                variant="outlined" />
+                            <TextField sx={{ width: '100%', mb: 2 }}
+                                id="outlined-basic"
+                                label="Email"
+                                name="email"
+                                onBlur={handleInputOnBlur}
+                                variant="outlined" />
+                        
+                            <FormControl sx={{ width: '100%', mb: 2 }} variant="outlined">
+                                <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
+                                <OutlinedInput
+                                    id="outlined-adornment-password"
+                                    type={values.showPassword ? 'text' : 'password'}
+                                    value={values.password}
+                                    onChange={handleChange('password')}
+                                    endAdornment={
+                                        <InputAdornment position="end">
+                                            <IconButton
+                                                aria-label="toggle password visibility"
+                                                onClick={handleClickShowPassword}
+                                                onMouseDown={handleMouseDownPassword}
+                                                edge="end"
+                                            >
+                                                {values.showPassword ? <VisibilityOff /> : <Visibility />}
+                                            </IconButton>
+                                        </InputAdornment>
+                                    }
+                                    label="Password"
+                                    name="password"
+                                    onBlur={handleInputOnBlur}
+                                />
+                            </FormControl>
+                            <TextField sx={{ width: '100%', mb: 2 }}
+                                id="outlined-basic"
+                                label="Confirm Password"
+                                name="password2"
+                                type="password"
+                                onBlur={handleInputOnBlur}
+                                variant="outlined" />
+                            <Button sx={{ width: '100%', mb: 2 }} type="submit" variant="contained">Register Now</Button>
+                            <NavLink
+                                style={{ textDecoration: 'none' }}
+                                to="/login">
+                                <Button style={{ width: '100%', mx: 'auto' }} variant="text">Existing User? Please Login</Button>
+                            </NavLink>
+                            {
+                                user?.email && <Alert severity="success">Login successfully!</Alert>
+                            }
+                            {
+                                authError && <Alert severity="error">{authError}</Alert>
+                            }
+                            <Button sx={{ width: '100%', mt: 2 }} onClick={handleGoogleSignIn} variant="contained">Continue With Google</Button>
+                        </form>
+                    }           
                     {
                         loading && <CircularProgress />
                     }

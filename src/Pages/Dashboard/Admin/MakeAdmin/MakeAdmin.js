@@ -1,13 +1,13 @@
-import { Button, Card, Grid, TextField, Typography } from "@mui/material";
-import React from "react";
+import { Alert, Button, Card, Grid, TextField, Typography } from "@mui/material";
+import React, { useState } from "react";
 import useCustomStyles from "../../../../Hooks/useCustomStyles";
 
 const MakeAdmin = () => {
     const { formStyle } = useCustomStyles();
-    /* const [email, setEmail] = useState('');
+    const [email, setEmail] = useState('');
     const [success, setSuccess] = useState(false);
-    const { token } = useAuth();
-    const handleOnBlur = e => {
+    // const { token } = useAuth();
+    const handleFieldOnBlur = e => {
         setEmail(e.target.value);
     }
     const handleAdminSubmit = (e) => {
@@ -15,7 +15,7 @@ const MakeAdmin = () => {
         fetch('http://localhost:5000/users/admin', {
             method: 'PUT',
             headers: {
-                'authorization':`Bearer ${token}`,
+                // 'authorization':`Bearer ${token}`,
                 'content-type':'application/json'
             },
             body: JSON.stringify(user)
@@ -24,13 +24,13 @@ const MakeAdmin = () => {
             .then(data => {
                 if (data.modifiedCount) {
                     setSuccess(true);
-                    // setEmail('');
+                    setEmail('');
                 }
             })
         
 
         e.preventDefault();
-    } */
+    }
     return (
         <Grid container>
             <Grid item xs={12} md={4} sx={{mx:'auto'}}>
@@ -38,16 +38,16 @@ const MakeAdmin = () => {
                     <Typography sx={{ textAlign:'center'}} variant="h5" gutterBottom component="div">
                         Make An Admin
                     </Typography>
-                    <form style={formStyle}>
+                    <form onSubmit={handleAdminSubmit} style={formStyle}>
                         <TextField
                             sx={{width:'90%', mb:2}}
                             label="Email"
                             type="email"
-                    
+                            onBlur={handleFieldOnBlur}
                             variant="standard" />
                         <Button type="submit" variant="contained">Make Admin</Button>
                     </form>
-                    {/* {success && <Alert severity="success">Making Admin successfully!</Alert>} */}
+                    {success && <Alert severity="success">Making Admin successfully!</Alert>}
                 </Card>
             
             </Grid>

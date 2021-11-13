@@ -25,7 +25,7 @@ const drawerWidth = 200;
 function Dashboard(props) {
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
-    const { user, logOut } = useAuth();
+    const { user, logOut, admin } = useAuth();
     const { drawerItem,drawerLink } = useCustomStyles();
     let { path, url } = useRouteMatch();
     const handleDrawerToggle = () => {
@@ -35,7 +35,7 @@ function Dashboard(props) {
         <div>
             <Toolbar />
             <Divider />
-            <List>
+            {!admin && <List>
                 <ListItem className={drawerItem} button >
                     <ListItemText>
                         <Link className={drawerLink} to="/">Home</Link>
@@ -66,16 +66,22 @@ function Dashboard(props) {
                     </ListItemText>
                 </ListItem>
                 <Divider />
-            </List>
+            </List>}
             <Divider />
-            <List>
+            {admin && <List>
                 <ListItem className={drawerItem} button >
                     <ListItemText>
-                        <Link className={drawerLink} to={`${url}/manageAllOrders`}>Manage All Orders</Link>
+                        <Link className={drawerLink} to="/">Home</Link>
                     </ListItemText>
                 </ListItem>
                 <Divider />
-                <ListItem sx={{background:'#2E9DE6'}} className={drawerItem} button >
+                <ListItem className={drawerItem} button >
+                    <ListItemText>
+                        <Link className={drawerLink} to={`${url}`}>Manage All Orders</Link>
+                    </ListItemText>
+                </ListItem>
+                <Divider />
+                <ListItem className={drawerItem} button >
                     <ListItemText>
                         <Link className={drawerLink} to={`${url}/addProduct`}>Add A Product</Link>
                     </ListItemText>
@@ -89,7 +95,7 @@ function Dashboard(props) {
                 <Divider />
                 <ListItem className={drawerItem} button >
                     <ListItemText>
-                        <Link className={drawerLink} to={`${url}/manageProducts`}>Manage Products</Link>
+                        <Link className={drawerLink} to={`${url}/manageProducts`}>Manage All Products</Link>
                     </ListItemText>
                 </ListItem>
                 <Divider />
@@ -99,7 +105,7 @@ function Dashboard(props) {
                     </ListItemText>
                 </ListItem>
                 <Divider />
-            </List>
+            </List>}
         </div>
     );
 
@@ -167,8 +173,7 @@ function Dashboard(props) {
                 sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
             >
                 <Toolbar />
-                <Switch>
-
+                {!admin && <Switch>
                     <Route exact path={path}>
                         <MyOrders></MyOrders>
                     </Route>
@@ -178,8 +183,9 @@ function Dashboard(props) {
                     <Route path={`${path}/review`}>
                         <Review></Review>
                     </Route>
-
-                    <Route path={`${path}/manageAllOrders`}>
+                </Switch>}
+                {admin && <Switch>
+                    <Route exact path={path}>
                         <ManageAllOrders></ManageAllOrders>
                     </Route>
                     <Route path={`${path}/addProduct`}>
@@ -191,8 +197,7 @@ function Dashboard(props) {
                     <Route path={`${path}/manageProducts`}>
                         <ManageProducts></ManageProducts>
                     </Route>
-                    
-                </Switch>
+                </Switch>}
             </Box>
         </Box>
     );
