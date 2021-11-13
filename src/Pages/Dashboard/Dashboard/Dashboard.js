@@ -25,7 +25,7 @@ const drawerWidth = 200;
 function Dashboard(props) {
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
-    const { user, logOut, admin } = useAuth();
+    const { logOut, admin } = useAuth();
     const { drawerItem,drawerLink } = useCustomStyles();
     let { path, url } = useRouteMatch();
     const handleDrawerToggle = () => {

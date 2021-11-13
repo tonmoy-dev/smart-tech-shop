@@ -12,7 +12,7 @@ const Pay = () => {
     }
     return (
         <div>
-            <Grid container sx={12} md={5} sx={{mx:'auto',py:3}}>
+            <Grid container xs={12} md={5} sx={{mx:'auto',py:3}}>
                 <Card variant="outlined" sx={{px:5}} style={payStyle}>
                     <Typography variant="h4">
                         Payment Sytem Coming Soon

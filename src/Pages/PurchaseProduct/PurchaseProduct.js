@@ -23,7 +23,7 @@ const PurchaseProduct = () => {
             .then(res => res.json())
             .then(data => setProduct(data))
         
-    }, []);
+    }, [productId]);
     
     // handle input fields
     const handleOnBlur = (e) => {
