@@ -30,15 +30,30 @@ const Navigation = () => {
                 </ListItem>
                 <Divider />
                 <ListItem className={drawerItem} button >
-                    <ListItemText> <Link className={drawerLink} to="/login">Login</Link> </ListItemText>
+                    <ListItemText> <Link className={drawerLink} to="/exploreProducts">Explore</Link> </ListItemText>
                 </ListItem>
+                <Divider />
+                {   user.email &&
+                    <ListItem className={drawerItem} button >
+                        <ListItemText> <Link className={drawerLink} to="/dashboard">Dashboard</Link> </ListItemText>
+                    </ListItem>
+                }
                 <Divider />
                 <ListItem className={drawerItem} button >
-                    <ListItemText> <Link className={drawerLink} to="/dashboard">Dashboard</Link> </ListItemText>
+                    {/* <ListItemText> <Link className={drawerLink} to="/login">Login</Link> </ListItemText> */}
+                    <ListItemText>
+                        {   user.email ?
+                            <Button onClick={logOut} variant="contained">LogOut</Button>
+                            :
+                            <Link style={{ textDecoration: 'none' }} to="/login">
+                                <Button variant="contained">Login</Button>
+                            </Link>
+                        }
+                    </ListItemText>
                 </ListItem>
                 <Divider />
+                
             </List>
-          
         </Box>
     );
     
@@ -64,10 +79,8 @@ const Navigation = () => {
                         <Box className={navItemContainer}>
                             <Link className={navItem} to="/"><Button variant="contained">Home</Button></Link>
                             <Link className={navItem} to="/dashboard"><Button variant="contained">Dashboard</Button></Link>
-                            {
-                                user.email ?
+                            {   user.email ?
                                     <Button onClick={logOut} variant="contained">LogOut</Button>
-                            
                                     :
                                     <Link style={{ textDecoration: 'none' }} to="/login">
                                         <Button variant="contained">Login</Button>

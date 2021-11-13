@@ -57,8 +57,8 @@ const Register = () => {
     return (
         <Container>
             <Grid container spacing={0}>
-                <Grid item sx={{ mt: 10, p: 3, mx: 'auto', backgroundColor: '#fff' }} xs={8} md={4}>
-                    <Typography sx={{ textAlign: 'center' }} variant="h4" gutterBottom>Register</Typography>
+                <Grid item sx={{ mt: 10, mx: 'auto', backgroundColor: '#fff' }} xs={12} md={4}>
+                    <Typography sx={{ textAlign: 'center', mb:3 }} variant="h4" gutterBottom>Create An Account</Typography>
                     {
                         !loading && <form onSubmit={handleRegisterSubmit} style={{ width: '80%', margin: ' 0 auto' }}>
 
