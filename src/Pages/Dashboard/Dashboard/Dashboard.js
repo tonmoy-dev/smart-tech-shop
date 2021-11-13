@@ -67,7 +67,6 @@ function Dashboard(props) {
                 </ListItem>
                 <Divider />
             </List>}
-            <Divider />
             {admin && <List>
                 <ListItem className={drawerItem} button >
                     <ListItemText>
