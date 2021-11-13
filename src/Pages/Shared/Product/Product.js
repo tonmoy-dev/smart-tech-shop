@@ -5,12 +5,14 @@ import { Link } from "react-router-dom";
 const Product = ({ product }) => {
     const { name, description, price, img, _id} = product;
     return (
-        <Grid item xs={12} md={4}>
-            <Card>
+        <Grid sx={{mb:1}} item xs={12} md={4}>
+            <Card sx={{p:1,borderRadius:'5px'}} variant="outlined">
                 <CardActionArea>
                     <CardMedia
+                        sx={{
+                            width: '100%', objectFit:'contain'}}
                         component="img"
-                        height="140"
+                        height="250"
                         image={img}
                         alt="green iguana"
                     />
@@ -21,14 +23,14 @@ const Product = ({ product }) => {
                         <Typography variant="body2" color="text.secondary">
                             {description}
                         </Typography>
-                        <Typography variant="body2" color="text.secondary">
+                        <Typography variant="h6" gutterBottom component="div" color="text.secondary"> 
                             Price: {price} USD
                         </Typography>
                     </CardContent>
                 </CardActionArea>
                 <CardActions>
-                    <Link to={`/purchaseProduct/${_id}`}>
-                        <Button size="small" variant="contained" color="primary">
+                    <Link style={{textDecoration:'none'}} to={`/purchaseProduct/${_id}`}>
+                        <Button sx={{ml:1}} size="large" variant="contained" color="primary">
                             Buy Now
                         </Button>
                     </Link>

@@ -67,13 +67,13 @@ const Navigation = () => {
                             edge="start"
                             color="inherit"
                             aria-label="menu"
-                            sx={{ mr: 2 }}
+                            sx={{ mr: 3}}
                             className={navIcon}
                             onClick={()=> setState(true)}
                         >
                             <MenuIcon />
                         </IconButton>
-                        <Typography className={navLogo} variant="h6" component="div" sx={{ flexGrow: 1 }}>
+                        <Typography className={navLogo} variant="h6" component="div" sx={{ flexGrow: 1, ml:10 }}>
                             SmartTechShop
                         </Typography>
                         <Box className={navItemContainer}>

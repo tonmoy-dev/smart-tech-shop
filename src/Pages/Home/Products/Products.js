@@ -14,9 +14,9 @@ const Products = () => {
 
     return (
         <div>
-            <Box sx={{ flexGrow: 1 }}>
+            <Box sx={{ flexGrow: 1, py:3 }}>
                 <Container>
-                    <Typography sx={{ my: 4, textAlign: 'center' }} variant="h4" component="div">
+                    <Typography sx={{ mb: 5, textAlign: 'center' }} variant="h4" component="div">
                         OUR BEST PRODUCTS
                     </Typography>
                     <Grid container spacing={2}>

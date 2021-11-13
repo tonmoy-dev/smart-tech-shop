@@ -11,6 +11,7 @@ const useCustomStyles = () => {
   const useNavStyle = makeStyles({
     navItem: {
       color: '#fff',
+      marginRight:'10px',
       textDecoration: 'none'
     },
     navIcon: {
@@ -34,7 +35,7 @@ const useCustomStyles = () => {
       padding: '20px 0 20px 10px'
     },
     drawerItem: {
-            
+         //   
     }
   });
   const { navItem, navIcon, navLogo, navItemContainer, drawerLink, drawerItem } = useNavStyle();

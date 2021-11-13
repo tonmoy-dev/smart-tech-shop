@@ -1,6 +1,7 @@
 import { Container, Grid, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React, { useEffect, useState } from "react";
+import bgImg from "../../../../images/reviewBg/reviewBg.jpg";
 import Review from "../Review/Review";
 
 const CustomerReviews = () => {
@@ -11,11 +12,17 @@ const CustomerReviews = () => {
             .then(data => setReviews(data))
     }, []);
 
+    const reviewBg = {
+        background: `url(${bgImg})`,
+        backgroundColor: 'rgba(45, 58, 74, 0.9)',
+        backgroundBlendMode: 'darken,luminosity ',
+        backgroundSize: 'cover'
+    }
     return (
-        <Box sx={{ flexGrow: 1, py:5}}>
+        <Box style={reviewBg} sx={{ flexGrow: 1, py:6}}>
             <Container>
-                <Typography style={{textAlign:'center'}} sx={{mb:3}} variant="h4">
-                    Customer Reviews
+                <Typography style={{textAlign:'center', color:'#fff'}} sx={{mb:3}} variant="h4">
+                    CUSTOMER REVIEWS
                 </Typography>
             <Grid container>
                 {reviews.map(review =>

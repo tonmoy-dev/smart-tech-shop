@@ -1,4 +1,4 @@
-import { Grid } from "@mui/material";
+import { Container, Grid } from "@mui/material";
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
@@ -60,13 +60,14 @@ const PurchaseProduct = () => {
     return (
         <>
             <Navigation></Navigation>
-            <Grid container spacing={2} sx={{py:4}}>
+            <Container>
+            <Grid container spacing={2} sx={{py:5}}>
                 <Grid item xs={12} md={6}>
-                    <Card sx={{ maxWidth: 345 }}>
+                    <Card variant="outlined" sx={{ maxWidth: 345 }}>
                         <CardMedia
                             component="img"
                             alt="green iguana"
-                            height="140"
+                            height="auto"
                             image={product.img}
                         />
                         <CardContent>
@@ -77,16 +78,22 @@ const PurchaseProduct = () => {
                                 {product.description}
                             </Typography>
                         </CardContent>
-                        <CardActions>
-                            <Button size="small">Share</Button>
-                            <Button size="small">Learn More</Button>
+                            <CardActions>
+                            <Typography sx={{ml:1}} gutterBottom variant="h5" component="div">
+                                Price: ${product.price}
+                            </Typography>
                         </CardActions>
                     </Card>
                 </Grid>
-                <Grid item xs={12} md={6}>
-                    <form onSubmit={handlePurchaseSubmit}>
-                        <h3>{product._id}</h3>
-                        <TextField sx={{ width: '90%', mb: 2 }}
+                <Grid item xs={12} md={6} style={{border:'2px solid #ddd', padding:'20px 0',borderRadius:'10px'}}>
+                    <form onSubmit={handlePurchaseSubmit} style={{width:'80%',margin:'0 auto'}}>
+                    <Typography sx={{textAlign:'center',mb:5}} variant="h4" gutterBottom component="div">
+                    Fill The Form
+      </Typography>
+                    <Typography variant="body" gutterBottom component="div">
+                    Product Name: {product.name}
+      </Typography>
+                        <TextField sx={{ width: '100%', mb: 2 }}
                             required
                             id="outlined-basic" variant="outlined"
                             label="Name"
@@ -94,14 +101,14 @@ const PurchaseProduct = () => {
                             defaultValue=""
                             onBlur={handleOnBlur}
                         />
-                        <TextField sx={{ width: '90%', mb: 2 }}
+                        <TextField sx={{ width: '100%', mb: 2 }}
                             label="Address"
                             name="address"
                             onBlur={handleOnBlur}
                             defaultValue=""
                             id="outlined-basic" variant="outlined"
                         />
-                        <TextField sx={{ width: '90%', mb: 2 }}
+                        <TextField sx={{ width: '100%', mb: 2 }}
                             required
                             label="Email"
                             name="email"
@@ -112,26 +119,27 @@ const PurchaseProduct = () => {
                                 readOnly: true,
                               }}
                         />
-                        <TextField sx={{ width: '90%', mb: 2 }}
+                        <TextField sx={{ width: '100%', mb: 2 }}
                             label="Phone Number"
                             name="phone"
                             onBlur={handleOnBlur}
                             defaultValue=""
                             id="outlined-basic" variant="outlined"
                         />
-                        <TextField sx={{ width: '90%', mb: 2 }}
+                        <TextField sx={{ width: '100%', mb: 2 }}
                             label="Country"
                             name="country"
                             onBlur={handleOnBlur}
                             defaultValue=""
                             id="outlined-basic" variant="outlined"
                         />
-                        <Button type="submit" variant="contained">
-                            Buy
+                        <Button size="large" type="submit" variant="contained">
+                            Book Order
                         </Button>
                     </form>
                 </Grid>
             </Grid>
+            </Container>
         </>
     );
 };
