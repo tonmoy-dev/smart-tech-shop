@@ -20,7 +20,7 @@ const MyOrders = () => {
 
     const { user } = useAuth();
     React.useEffect(() => {
-        fetch(`http://localhost:5000/orders/${user.email}`)
+        fetch(`https://intense-chamber-05246.herokuapp.com/orders/${user.email}`)
             .then(res => res.json())
             .then(data => setOrders(data))
         

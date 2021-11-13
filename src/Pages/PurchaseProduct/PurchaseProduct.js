@@ -19,7 +19,7 @@ const PurchaseProduct = () => {
     
     // load product
     useEffect(() => {
-        fetch(`http://localhost:5000/products/${productId}`)
+        fetch(`https://intense-chamber-05246.herokuapp.com/products/${productId}`)
             .then(res => res.json())
             .then(data => setProduct(data))
         
@@ -42,7 +42,7 @@ const PurchaseProduct = () => {
             productPrice: product.price
         }
         // send to the server
-        fetch('http://localhost:5000/orders', {
+        fetch('https://intense-chamber-05246.herokuapp.com/orders', {
             method: 'POST',
             headers: {
                 'content-type':'application/json'

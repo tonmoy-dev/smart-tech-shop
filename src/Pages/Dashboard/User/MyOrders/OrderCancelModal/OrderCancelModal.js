@@ -8,7 +8,7 @@ const OrderCancelModal = ({orders,setOrders,openCancellation,setOpenCancellation
 
     // order cancel handlers
     const handleOrderCancel = id => {
-        fetch(`http://localhost:5000/orders/${id}`, {
+        fetch(`https://intense-chamber-05246.herokuapp.com/orders/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())

@@ -8,7 +8,7 @@ const AddProduct = () => {
     const { register, handleSubmit, reset } = useForm();
     const {formStyle,fieldStyle} = useCustomStyles();
     const onSubmit = data => {
-        fetch('http://localhost:5000/products', {
+        fetch('https://intense-chamber-05246.herokuapp.com/products', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
