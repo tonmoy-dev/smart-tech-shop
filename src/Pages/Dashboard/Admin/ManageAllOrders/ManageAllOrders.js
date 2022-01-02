@@ -44,7 +44,7 @@ const ManageAllOrders = () => {
                                 <StyledTableCell align="center">${order.productPrice}</StyledTableCell>
                                 <StyledTableCell align="center">{order.email}</StyledTableCell>
                                 <StyledTableCell align="center">
-                                    <Button variant="contained">Pending</Button>
+                                    <Button color="success" variant="contained">Pending</Button>
                                 </StyledTableCell>
                             </StyledTableRow>
                         ))}

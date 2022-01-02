@@ -12,13 +12,13 @@ const TopBanner = () => {
                 <Grid container spacing={2} sx={{py:5}}>
                     <Grid item xs={12} md={6}>
                     <Box sx={{py:5}}>
-                    <Typography sx={{fontWeight:'500'}} variant="h3" gutterBottom component="div">
+                    <Typography sx={{fontWeight:'600', color:'#4a4c4c'}} variant="h3" gutterBottom component="div">
                     Put Your World On <br /> Your Wrist
                     </Typography>
-                    <Typography sx={{ mb:3}} variant="subtitle1" gutterBottom component="div">
+                    <Typography sx={{ mb:3 ,color:'#4a4c4c'}} variant="subtitle1" gutterBottom component="div">
                     Wear OS lets you stay connected in style. Enjoy unparalleled fitness tracking, music controls, messaging and more—all just one glance away.
                     </Typography>
-                    <Button size="large" variant="contained">
+                    <Button size="large" sx={{backgroundColor:'#7bb519'}} color="success" variant="contained">
                         <Link style={{textDecoration:'none',color:'#fff'}} to="/exploreProducts">Explore all watches</Link>
                     </Button>
                 </Box>

@@ -58,7 +58,7 @@ const Register = () => {
         <Container>
             <Grid container spacing={0}>
                 <Grid item sx={{ mt: 10, mx: 'auto', backgroundColor: '#fff' }} xs={12} md={4}>
-                    <Typography sx={{ textAlign: 'center', mb:3 }} variant="h4" gutterBottom>Create An Account</Typography>
+                    <Typography sx={{color:'#7bb519', textAlign: 'center',mb:3 }} variant="h4" gutterBottom>Create An Account</Typography>
                     {
                         !loading && <form onSubmit={handleRegisterSubmit} style={{ width: '80%', margin: ' 0 auto' }}>
 
@@ -107,11 +107,11 @@ const Register = () => {
                                 type="password"
                                 onBlur={handleInputOnBlur}
                                 variant="outlined" />
-                            <Button sx={{ width: '100%', mb: 2 }} type="submit" variant="contained">Register Now</Button>
+                            <Button sx={{backgroundColor:'#7bb519',width: '100%', mb: 2}} type="submit" variant="contained">Register Now</Button>
                             <NavLink
                                 style={{ textDecoration: 'none' }}
                                 to="/login">
-                                <Button style={{ width: '100%', mx: 'auto' }} variant="text">Existing User? Please Login</Button>
+                                <Button color="success" style={{ width: '100%', mx: 'auto' }} variant="text">Existing User? Please Login</Button>
                             </NavLink>
                             {
                                 user?.email && <Alert severity="success">Login successfully!</Alert>
@@ -119,7 +119,7 @@ const Register = () => {
                             {
                                 authError && <Alert severity="error">{authError}</Alert>
                             }
-                            <Button sx={{ width: '100%', mt: 2 }} onClick={handleGoogleSignIn} variant="contained">Continue With Google</Button>
+                            <Button sx={{backgroundColor:'#7bb519',width: '100%', mt: 2}} color="success" onClick={handleGoogleSignIn} variant="contained">Continue With Google</Button>
                         </form>
                     }           
                     {

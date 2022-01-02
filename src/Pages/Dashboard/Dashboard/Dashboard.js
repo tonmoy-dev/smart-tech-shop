@@ -62,7 +62,7 @@ function Dashboard(props) {
                 <Divider />
                 <ListItem className={drawerItem} button >
                     <ListItemText>
-                    <Button onClick={logOut} variant="contained">LogOut</Button>
+                    <Button sx={{backgroundColor:'#7bb519'}} color="success" onClick={logOut} variant="contained">LogOut</Button>
                     </ListItemText>
                 </ListItem>
                 <Divider />
@@ -100,7 +100,7 @@ function Dashboard(props) {
                 <Divider />
                 <ListItem className={drawerItem} button >
                     <ListItemText>
-                    <Button onClick={logOut} variant="contained">LogOut</Button>
+                    <Button sx={{backgroundColor:'#7bb519'}} color="success" onClick={logOut} variant="contained">LogOut</Button>
                     </ListItemText>
                 </ListItem>
                 <Divider />
@@ -118,6 +118,7 @@ function Dashboard(props) {
                 sx={{
                     width: { sm: `calc(100% - ${drawerWidth}px)` },
                     ml: { sm: `${drawerWidth}px` },
+					backgroundColor:'#7bb519'
                 }}
             >
                 <Toolbar>

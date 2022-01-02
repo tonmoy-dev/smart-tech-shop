@@ -12,7 +12,7 @@ const useCustomStyles = () => {
     navItem: {
       color: '#fff',
       marginRight:'10px',
-      textDecoration: 'none'
+      textDecoration: 'none',
     },
     navIcon: {
       [theme.breakpoints.up('sm')]: {
@@ -31,8 +31,9 @@ const useCustomStyles = () => {
     },
     drawerLink: {
       textDecoration: 'none',
-      color: '#000',
-      padding: '20px 0 20px 10px'
+      color: '#7bb519',
+      padding: '20px 0 20px 10px',
+	  fontWeight:'500'
     },
     drawerItem: {
          //   
@@ -59,7 +60,7 @@ const useCustomStyles = () => {
   // table style
   const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
-      backgroundColor: theme.palette.primary.dark,
+      backgroundColor: '#7bb519',
       color: theme.palette.common.white,
       fontSize: 16,
     },

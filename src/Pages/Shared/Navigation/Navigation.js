@@ -20,11 +20,13 @@ const Navigation = () => {
 
     const { navItem, navIcon, navLogo, navItemContainer, drawerLink, drawerItem } = useCustomStyles();
     const list = (
+		
         <Box
             sx={{ width: 250 }}
             role="presentation"
         >
             <List>
+				{/* small devices */}
                 <ListItem className={drawerItem} button >
                     <ListItemText> <Link className={drawerLink} to="/">Home</Link> </ListItemText>
                 </ListItem>
@@ -39,14 +41,14 @@ const Navigation = () => {
                     </ListItem>
                 }
                 <Divider />
-                <ListItem className={drawerItem} button >
+                <ListItem className={drawerItem} button > 
                     {/* <ListItemText> <Link className={drawerLink} to="/login">Login</Link> </ListItemText> */}
                     <ListItemText>
                         {   user.email ?
-                            <Button onClick={logOut} variant="contained">LogOut</Button>
+                            <Button sx={{backgroundColor:'#7bb519'}} color="success" onClick={logOut} variant="contained">LogOut</Button>
                             :
                             <Link style={{ textDecoration: 'none' }} to="/login">
-                                <Button variant="contained">Login</Button>
+                                <Button sx={{backgroundColor:'#7bb519'}} color="success" variant="contained">Login</Button>
                             </Link>
                         }
                     </ListItemText>
@@ -60,30 +62,36 @@ const Navigation = () => {
     return (
         <>
             <Box sx={{ flexGrow: 1 }}>
-                <AppBar position="static">
+                <AppBar position="static" sx={{ color:'#000', backgroundColor:'transparent', boxShadow: 'rgba(0, 0, 0, 0.15) 0px 5px 15px 0px' }}>
                     <Toolbar>
+						<Box className={navIcon}>
                         <IconButton
                             size="large"
                             edge="start"
-                            color="inherit"
                             aria-label="menu"
-                            sx={{ mr: 3}}
-                            className={navIcon}
+                            sx={{ mr: 0}}
                             onClick={()=> setState(true)}
                         >
-                            <MenuIcon />
+                            <MenuIcon/>
                         </IconButton>
-                        <Typography className={navLogo} variant="h6" component="div" sx={{ flexGrow: 1, ml:10 }}>
+						</Box>
+                        <Typography className={navLogo} variant="h5" component="div" sx={{ flexGrow: 1, ml:10, color: '#7bb519',fontWeight:'700' }}>
                             SmartTechShop
                         </Typography>
+						
+						{/* medium & large devices */}
                         <Box className={navItemContainer}>
-                            <Link className={navItem} to="/"><Button variant="contained">Home</Button></Link>
-                            <Link className={navItem} to="/dashboard"><Button variant="contained">Dashboard</Button></Link>
+                            <Link className={navItem} to="/">
+								<Button sx={{backgroundColor:'#7bb519'}} color="success" variant="contained">Home</Button>
+							</Link>
+                            <Link className={navItem} to="/dashboard">
+								<Button sx={{backgroundColor:'#7bb519'}} color="success" variant="contained">Dashboard</Button>
+							</Link>
                             {   user.email ?
-                                    <Button onClick={logOut} variant="contained">LogOut</Button>
+                                    <Button onClick={logOut} sx={{backgroundColor:'#7bb519'}} color="success" variant="contained">LogOut</Button>
                                     :
                                     <Link style={{ textDecoration: 'none' }} to="/login">
-                                        <Button variant="contained">Login</Button>
+                                        <Button sx={{backgroundColor:'#7bb519'}} color="success" variant="contained">Login</Button>
                                     </Link>
                             }
                         </Box>

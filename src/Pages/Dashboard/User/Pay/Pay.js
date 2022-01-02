@@ -6,7 +6,7 @@ const Pay = () => {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: '#42a5f5',
+        backgroundColor: '#7bb519',
         color: '#fff',
         height: '250px'
     }

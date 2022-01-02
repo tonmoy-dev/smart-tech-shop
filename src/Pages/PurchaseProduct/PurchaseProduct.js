@@ -63,7 +63,7 @@ const PurchaseProduct = () => {
             <Container>
             <Grid container spacing={2} sx={{py:5}}>
                 <Grid item xs={12} md={6}>
-                    <Card variant="outlined" sx={{ maxWidth: 345 }}>
+                    <Card variant="outlined" sx={{ maxWidth: 345, boxShadow: 'rgba(0, 0, 0, 0.15) 0px 5px 15px 0px' }}>
                         <CardMedia
                             component="img"
                             alt="green iguana"
@@ -133,7 +133,7 @@ const PurchaseProduct = () => {
                             defaultValue=""
                             id="outlined-basic" variant="outlined"
                         />
-                        <Button size="large" type="submit" variant="contained">
+                        <Button sx={{backgroundColor:'#7bb519'}} color="success" size="large" type="submit" variant="contained">
                             Book Order
                         </Button>
                     </form>

@@ -59,7 +59,7 @@ const Review = () => {
                                     placeholder="Review"
                                     multiline
                                 />
-                                <Button type="submit" variant="contained">Send Review</Button>
+                                <Button sx={{backgroundColor:'#7bb519'}} color="success"  type="submit" variant="contained">Send Review</Button>
                             </form>
                         </CardContent>
                     </Card>

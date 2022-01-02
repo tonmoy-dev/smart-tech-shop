@@ -1,4 +1,4 @@
-import { Grid, Typography } from '@mui/material';
+import { Button,Grid, Typography } from '@mui/material';
 import Card from '@mui/material/Card';
 import React from "react";
 import { useForm } from "react-hook-form";
@@ -23,6 +23,9 @@ const AddProduct = () => {
             }
         })
     };
+	const customButton ={
+	width: '30%', cursor:'pointer', marginBottom: '10px', padding: '16px', resize: 'none', fontSize: '16px', backgroundColor:'#7bb519', border:'none', borderRadius:'3px', color:'#fff', fontFamily: 'Roboto'
+	}
 
     return (
         <div>
@@ -38,7 +41,7 @@ const AddProduct = () => {
                             <input style={fieldStyle} placeholder="Product Name" {...register("name", { required: true })} />
                             <textarea style={fieldStyle} placeholder="Product Description" {...register("description",{ required: true })} />
                             <input style={fieldStyle} placeholder="Product Price" type="number" {...register("price",{ required: true })} />
-                            <input style={fieldStyle} type="submit" />
+							<input style={customButton} type="submit" />
                         </form>
                     </Card>
                 </Grid>
@@ -49,4 +52,3 @@ const AddProduct = () => {
 }
 
 export default AddProduct;
-

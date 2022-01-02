@@ -9,7 +9,7 @@ const NewsLetter = () => {
             </Typography>
             <Box sx={{ width: '70%', mx: 'auto', display:'flex',flexWrap: 'wrap',justifyContent: 'center'}} >
                 <TextField sx={{flexGrow: 1 }} id="outlined-basic" label="Enter your email address here..." variant="outlined" />
-                <Button variant="contained" color="success"  size="large">Subscribe</Button>
+                <Button sx={{backgroundColor:'#7bb519'}} variant="contained" color="success"  size="large">Subscribe</Button>
             </Box>
         </Container>
     );

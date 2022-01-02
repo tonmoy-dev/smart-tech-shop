@@ -54,7 +54,7 @@ const Login = () => {
         <Container>
             <Grid container spacing={0}>
                 <Grid item sx={{ mt: 10, mx: 'auto', backgroundColor: '#fff' }} xs={12} md={4}>
-                    <Typography sx={{ textAlign: 'center',mb:3 }} variant="h4" gutterBottom>LogIn</Typography>
+                    <Typography sx={{color:'#7bb519', textAlign: 'center',mb:3 }} variant="h4" gutterBottom>Login</Typography>
                     <form onSubmit={handleLogInSubmit} style={{ width: '80%', margin: ' 0 auto' }}>
 
                         <TextField sx={{ width: '100%', mb: 2 }}
@@ -88,11 +88,11 @@ const Login = () => {
                                 onBlur={handleInputOnBlur}
                             />
                         </FormControl>
-                        <Button sx={{ width: '100%', mb: 2 }} type="submit" variant="contained">Login</Button>
+                        <Button sx={{backgroundColor:'#7bb519',width: '100%', mb: 2}} color="success" type="submit" variant="contained">Login</Button>
                         <NavLink
                             style={{ textDecoration: 'none' }}
                             to="/register">
-                            <Button style={{ width: '100%', mx: 'auto' }} variant="text">New User? Please Register</Button>
+                            <Button color="success" style={{ width: '100%', mx: 'auto' }} variant="text">New User? Please Register</Button>
                         </NavLink>
                         {loading && <CircularProgress/>}
                         {
@@ -101,7 +101,7 @@ const Login = () => {
                         {
                             authError && <Alert severity="error">{authError}</Alert>
                         }
-                        <Button sx={{ width: '100%', mt: 2 }} onClick={handleGoogleSignIn} variant="contained">Continue With Google</Button>
+                        <Button sx={{backgroundColor:'#7bb519',width: '100%', mt: 2}} color="success" onClick={handleGoogleSignIn} variant="contained">Continue With Google</Button>
                     </form>
                 </Grid>
             </Grid>
