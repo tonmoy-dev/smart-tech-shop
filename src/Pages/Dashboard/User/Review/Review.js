@@ -16,7 +16,7 @@ const Review = () => {
             name: user.displayName,
             customerReview: review,
         }
-        fetch('https://intense-chamber-05246.herokuapp.com/customerReviews', {
+        fetch('https://smart-tech-shop-server.herokuapp.com/customerReviews', {
             method: 'POST',
             headers: {
                 'content-type':'application/json'

@@ -13,7 +13,7 @@ const ManageProducts = () => {
     const [products, setProducts] = React.useState([]);
 
     React.useEffect(() => {
-        fetch(`https://intense-chamber-05246.herokuapp.com/products`)
+        fetch(`https://smart-tech-shop-server.herokuapp.com/products`)
             .then(res => res.json())
             .then(data => setProducts(data))
         

@@ -1,4 +1,4 @@
-import { Button,Grid, Typography } from '@mui/material';
+import { Grid, Typography } from '@mui/material';
 import Card from '@mui/material/Card';
 import React from "react";
 import { useForm } from "react-hook-form";
@@ -8,7 +8,7 @@ const AddProduct = () => {
     const { register, handleSubmit, reset } = useForm();
     const {formStyle,fieldStyle} = useCustomStyles();
     const onSubmit = data => {
-        fetch('https://intense-chamber-05246.herokuapp.com/products', {
+        fetch('https://smart-tech-shop-server.herokuapp.com/products', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

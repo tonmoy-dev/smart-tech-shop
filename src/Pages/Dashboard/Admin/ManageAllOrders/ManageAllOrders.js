@@ -13,7 +13,7 @@ const ManageAllOrders = () => {
     const [orders, setOrders] = React.useState([]);
     
     React.useEffect(() => {
-        fetch(`https://intense-chamber-05246.herokuapp.com/orders`)
+        fetch(`https://smart-tech-shop-server.herokuapp.com/orders`)
             .then(res => res.json())
             .then(data => setOrders(data))
         

@@ -19,7 +19,7 @@ const PurchaseProduct = () => {
     
     // load product
     useEffect(() => {
-        fetch(`https://intense-chamber-05246.herokuapp.com/products/${productId}`)
+        fetch(`https://smart-tech-shop-server.herokuapp.com/products/${productId}`)
             .then(res => res.json())
             .then(data => setProduct(data))
         
@@ -42,7 +42,7 @@ const PurchaseProduct = () => {
             productPrice: product.price
         }
         // send to the server
-        fetch('https://intense-chamber-05246.herokuapp.com/orders', {
+        fetch('https://smart-tech-shop-server.herokuapp.com/orders', {
             method: 'POST',
             headers: {
                 'content-type':'application/json'

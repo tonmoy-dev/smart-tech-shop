@@ -12,7 +12,7 @@ const MakeAdmin = () => {
     }
     const handleAdminSubmit = (e) => {
         const user ={email}
-        fetch('https://intense-chamber-05246.herokuapp.com/users/admin', {
+        fetch('https://smart-tech-shop-server.herokuapp.com/users/admin', {
             method: 'PUT',
             headers: {
                 // 'authorization':`Bearer ${token}`,
