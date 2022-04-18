@@ -52,7 +52,7 @@ const Footer = () => {
                     </Grid>
                 </Grid>
             </Container>
-            <Box sx={{ bgcolor: '#7bb519', p:2, color: '#fff',mt:2 }}>
+            <Box sx={{ bgcolor: '#FF3E30', p:2, color: '#fff',mt:2 }}>
                 <Typography style={{ textAlign: 'center' }} variant="subtitle1" gutterBottom component="div">
                     Copyright © 2021 Smart Tech Shop. All Rights Reserved.
                 </Typography>

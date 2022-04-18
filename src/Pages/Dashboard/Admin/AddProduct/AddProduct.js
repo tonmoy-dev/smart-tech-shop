@@ -24,7 +24,7 @@ const AddProduct = () => {
         })
     };
 	const customButton ={
-	width: '30%', cursor:'pointer', marginBottom: '10px', padding: '16px', resize: 'none', fontSize: '16px', backgroundColor:'#7bb519', border:'none', borderRadius:'3px', color:'#fff', fontFamily: 'Roboto'
+	width: '30%', cursor:'pointer', marginBottom: '10px', padding: '16px', resize: 'none', fontSize: '16px', backgroundColor:'#FF3E30', border:'none', borderRadius:'3px', color:'#fff', fontFamily: 'Roboto'
 	}
 
     return (

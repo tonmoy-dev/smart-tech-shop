@@ -95,7 +95,7 @@ const Login = () => {
 					<Box sx={{textAlign:'center',mb:2}}>
 						Don't have an account?
 						<NavLink
-                            style={{ textDecoration: 'none',color:'#7bb519',marginLeft:'10px' }}
+                            style={{ textDecoration: 'none',color:'#FF3E30',marginLeft:'10px', fontWeight:'600' }}
                             to="/register">Register Now
 						</NavLink>
 					</Box>
@@ -133,7 +133,7 @@ const Login = () => {
                                 onBlur={handleInputOnBlur}
                             />
                         </FormControl>
-                        <Button sx={{backgroundColor:'#7bb519',width: '100%',height:'50px', mb: 2, textTransform:'capitalize',fontSize:'16px'}} color="success" type="submit" variant="contained">Login</Button>
+                        <Button sx={{width: '100%',height:'50px', mb: 2, textTransform:'capitalize',fontSize:'16px'}} color="primary" type="submit" variant="contained">Login</Button>
 						<GoogleButton label="Continue with Google" style={{width: '100%', marginBottom:'10px',textAlign:'center'}} type="dark" onClick={handleGoogleSignIn} />
                         
                         {loading && <LinearProgress variant="buffer" value={progress} sx={{my:3}} valueBuffer={buffer} />}

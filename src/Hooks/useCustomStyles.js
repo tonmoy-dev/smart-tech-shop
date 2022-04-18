@@ -31,9 +31,9 @@ const useCustomStyles = () => {
     },
     drawerLink: {
       textDecoration: 'none',
-      color: '#7bb519',
+      color: '#FF3E30',
       padding: '20px 0 20px 10px',
-	  fontWeight:'500'
+	  fontWeight:'600'
     },
     drawerItem: {
          //   
@@ -60,7 +60,7 @@ const useCustomStyles = () => {
   // table style
   const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
-      backgroundColor: '#7bb519',
+      backgroundColor: '#FF3E30',
       color: theme.palette.common.white,
       fontSize: 16,
     },

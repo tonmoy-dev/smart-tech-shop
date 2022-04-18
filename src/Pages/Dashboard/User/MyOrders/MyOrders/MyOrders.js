@@ -51,7 +51,7 @@ const MyOrders = () => {
                                 <StyledTableCell align="center">${order.productPrice}</StyledTableCell>
                                 <StyledTableCell align="center">{order.email}</StyledTableCell>
                                 <StyledTableCell align="center">
-                                    <Button variant="contained" onClick={handleCancellationOpen}>Cancel</Button>
+                                    <Button color="primary" variant="contained" onClick={handleCancellationOpen}>Cancel</Button>
                                 </StyledTableCell>
                             </StyledTableRow>
                         ))}

@@ -3,8 +3,7 @@ import React from "react";
 
 const Review = ({review}) => {
     return (
-        <div>
-            <Grid item xs={12} md={12} sx={{mb:1}}>
+            <Grid sx={{mb:1}} item xs={12} md={6}>
                 <Card variant="outlined" sx={{px:3,py:2}}>
                     <Typography variant="h6" component="div">
                         {review.name}
@@ -14,8 +13,6 @@ const Review = ({review}) => {
                     </Typography>
                 </Card>
             </Grid>
-                
-        </div>
     );
 };
 

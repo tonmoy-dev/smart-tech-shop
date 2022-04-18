@@ -35,7 +35,7 @@ const OrderCancelModal = ({orders,setOrders,openCancellation,setOpenCancellation
                     <Typography sx={{ mb: 3 }} id="modal-modal-title" variant="h6" component="h2">
                         Do you want to cancel the order?
                     </Typography>
-                    <Button sx={{mx:2}} onClick={() => handleOrderCancel(order._id)} variant="contained">Yes</Button>
+                    <Button sx={{mx:2}} onClick={() => handleOrderCancel(order._id)} color="primary" variant="contained">Yes</Button>
                     <Button sx={{mx:2}} onClick={handleNotToCancel} variant="contained">No</Button>
                 </Box>
                 </Modal>

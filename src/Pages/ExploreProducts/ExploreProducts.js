@@ -19,7 +19,7 @@ const ExploreProducts = () => {
             <Box sx={{ flexGrow: 1 }}>
                 <Container>
                     <Typography sx={{ my: 4, textAlign: 'center' }} variant="h4" component="div">
-                        OUR ALL PRODUCTS
+                        Our All Products
                     </Typography>
                     <Grid container spacing={2}>
                         {

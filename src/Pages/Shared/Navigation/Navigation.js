@@ -27,8 +27,12 @@ const Navigation = () => {
         >
             <List>
 				{/* small devices */}
-                <ListItem className={drawerItem} button >
-                    <ListItemText> <Link className={drawerLink} to="/">Home</Link> </ListItemText>
+                <ListItem
+                    className={drawerItem}
+                    button >
+                    <ListItemText> <Link
+                        className={drawerLink}
+                        to="/">Home</Link> </ListItemText>
                 </ListItem>
                 <Divider />
                 <ListItem className={drawerItem} button >
@@ -75,23 +79,24 @@ const Navigation = () => {
                             <MenuIcon/>
                         </IconButton>
 						</Box>
-                        <Typography className={navLogo} variant="h5" component="div" sx={{ flexGrow: 1, ml:10, color: '#7bb519',fontWeight:'700' }}>
-                            SmartTechShop
-                        </Typography>
+						<div className={navLogo} style={{ fontSize:'24px',flexGrow: 1, marginLeft:'30px', color: '#FF3E30',fontWeight:'700' }}>
+						SMART<span style={{color:'#000'}}>life</span>
+						</div>
+                       
 						
 						{/* medium & large devices */}
                         <Box className={navItemContainer}>
                             <Link className={navItem} to="/">
-								<Button sx={{backgroundColor:'#7bb519'}} color="success" variant="contained">Home</Button>
+								<Button color="primary" variant="contained">Home</Button>
 							</Link>
                             <Link className={navItem} to="/dashboard">
-								<Button sx={{backgroundColor:'#7bb519'}} color="success" variant="contained">Dashboard</Button>
+								<Button color="primary" variant="contained">Dashboard</Button>
 							</Link>
                             {   user.email ?
-                                    <Button onClick={logOut} sx={{backgroundColor:'#7bb519'}} color="success" variant="contained">LogOut</Button>
+                                    <Button onClick={logOut} color="primary" variant="contained">LogOut</Button>
                                     :
                                     <Link style={{ textDecoration: 'none' }} to="/login">
-                                        <Button sx={{backgroundColor:'#7bb519'}} color="success" variant="contained">Login</Button>
+                                        <Button color="primary" variant="contained">Login</Button>
                                     </Link>
                             }
                         </Box>

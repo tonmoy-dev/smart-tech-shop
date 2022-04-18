@@ -18,13 +18,13 @@ const TopBanner = () => {
                     <Typography sx={{ mb:3 ,color:'#4a4c4c'}} variant="subtitle1" gutterBottom component="div">
                     Wear OS lets you stay connected in style. Enjoy unparalleled fitness tracking, music controls, messaging and more—all just one glance away.
                     </Typography>
-                    <Button size="large" sx={{backgroundColor:'#7bb519'}} color="success" variant="contained">
+                    <Button size="large" color="primary" variant="contained">
                         <Link style={{textDecoration:'none',color:'#fff'}} to="/exploreProducts">Explore all watches</Link>
                     </Button>
                 </Box>
                     </Grid>
                     <Grid item xs={12} md={6}>
-                        <img style={{width:'100%'}} src={bannerImg} alt="Banner Image" />
+                        <img style={{width:'100%'}} src={bannerImg} alt="Banner_image" />
                     </Grid>
                 </Grid>
                 

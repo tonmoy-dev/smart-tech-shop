@@ -44,7 +44,7 @@ const ManageProducts = () => {
                                 <StyledTableCell align="center">{product.name}</StyledTableCell>
                                 <StyledTableCell align="center">${product.price}</StyledTableCell>
                                 <StyledTableCell align="center">
-                                    <Button color="success" variant="contained">Delete</Button>
+                                    <Button color="primary" variant="contained">Delete</Button>
                                 </StyledTableCell>
                             </StyledTableRow>
                         ))}

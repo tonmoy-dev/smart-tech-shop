@@ -10,9 +10,36 @@ import Login from "./Pages/Login/Login/Login";
 import PrivateRoute from "./Pages/Login/PrivateRoute/PrivateRoute";
 import Register from "./Pages/Login/Register/Register";
 import PurchaseProduct from "./Pages/PurchaseProduct/PurchaseProduct";
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+
+const theme = createTheme({
+  typography: {
+    "fontFamily": `'Nunito', sans-serif`,
+    "fontSize": 14,
+    "fontWeightLight": 300,
+    "fontWeightRegular": 400,
+    "fontWeightMedium": 500
+   },
+  palette: {
+    primary: {
+      light: '#FF3E30',
+      main: '#FF3E30',
+      dark: '#CE2029',
+      contrastText: '#fff',
+    },
+    secondary: {
+      light: '#ff7961',
+      main: '#f44336',
+      dark: '#ba000d',
+      contrastText: '#000',
+    },
+  },
+   
+});
 
 function App() {
   return (
+  <ThemeProvider theme={theme}>
     <div className="App">
       <AuthProvider>
         <Router>
@@ -42,6 +69,7 @@ function App() {
         </Router>
       </AuthProvider>
     </div>
+	</ThemeProvider>
   );
 }
 

@@ -22,9 +22,9 @@ const CustomerReviews = () => {
         <Box style={reviewBg} sx={{ flexGrow: 1, py:6}}>
             <Container>
                 <Typography style={{textAlign:'center', color:'#fff'}} sx={{mb:3}} variant="h4">
-                    CUSTOMER REVIEWS
-                </Typography>
-            <Grid container>
+                    Customer Reviews
+					</Typography>
+            <Grid container spacing={2}>
                 {reviews.map(review =>
                         <Review
                             key={review._id}
