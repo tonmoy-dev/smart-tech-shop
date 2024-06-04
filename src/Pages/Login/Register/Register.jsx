@@ -1,18 +1,18 @@
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import { Alert, Button, Container, FormControl, Grid, IconButton, InputAdornment, InputLabel, OutlinedInput, TextField, Typography } from "@mui/material";
+import Box from '@mui/material/Box';
+import Checkbox from '@mui/material/Checkbox';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import FormGroup from '@mui/material/FormGroup';
+import LinearProgress from '@mui/material/LinearProgress';
+import Paper from '@mui/material/Paper';
 import React, { useState } from "react";
+import GoogleButton from 'react-google-button';
 import { NavLink, useHistory, useLocation } from "react-router-dom";
 import useAuth from '../../../Hooks/useAuth';
-import GoogleButton from 'react-google-button'
-import Navigation from '../../Shared/Navigation/Navigation.js';
-import Footer from '../../Shared/Footer/Footer.js';
-import Paper from '@mui/material/Paper';
-import Box from '@mui/material/Box';
-import FormGroup from '@mui/material/FormGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
-import LinearProgress from '@mui/material/LinearProgress';
+import Footer from '../../Shared/Footer/Footer';
+import Navigation from '../../Shared/Navigation/Navigation';
 
 
 const Register = () => {

@@ -8,7 +8,7 @@ const NewsLetter = () => {
             <Typography sx={{textAlign:'center',mb:3}} variant="h4" gutterBottom component="div">
             Our NewsLetter
             </Typography>
-            <Box sx={{ width: '70%', mx: 'auto', display:'flex',flexWrap: 'wrap',justifyContent: 'center'}} >
+            <Box sx={{ width: '70%', mx: 'auto', display:'flex',flexWrap: 'wrap',justifyContent: 'center',gap:'5px'}} >
                 <TextField sx={{flexGrow: 1 }} id="outlined-basic" label="Enter your email address here..." variant="outlined" />
                 <Button variant="contained" color="primary"  size="large">Subscribe</Button>
             </Box>

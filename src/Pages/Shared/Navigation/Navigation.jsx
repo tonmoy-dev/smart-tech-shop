@@ -13,10 +13,12 @@ import React from "react";
 import { Link } from 'react-router-dom';
 import useAuth from '../../../Hooks/useAuth';
 import useCustomStyles from '../../../Hooks/useCustomStyles';
+import "./Navigation.css";
 
 const Navigation = () => {
     const { user, logOut } = useAuth();
     const [state, setState] = React.useState(false);
+	const [nav, setNav] = React.useState(false);
 
     const { navItem, navIcon, navLogo, navItemContainer, drawerLink, drawerItem } = useCustomStyles();
     const list = (
@@ -63,10 +65,14 @@ const Navigation = () => {
         </Box>
     );
     
-    return (
+    const changeBackground = () =>{
+		(window.scrollY >= 100) ? setNav(true) : setNav(false);
+	}
+	window.addEventListener('scroll', changeBackground);
+	return (
         <>
             <Box sx={{ flexGrow: 1 }}>
-                <AppBar position="static" sx={{ color:'#000', backgroundColor:'transparent', boxShadow: 'rgba(0, 0, 0, 0.15) 0px 5px 15px 0px' }}>
+                <AppBar className={nav ? 'nav active' : 'nav'} sx={{ color:'#000', backgroundColor:'white', boxShadow: 'rgba(0, 0, 0, 0.15) 0px 5px 15px 0px'}}>
                     <Toolbar>
 						<Box className={navIcon}>
                         <IconButton

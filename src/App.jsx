@@ -11,6 +11,7 @@ import PrivateRoute from "./Pages/Login/PrivateRoute/PrivateRoute";
 import Register from "./Pages/Login/Register/Register";
 import PurchaseProduct from "./Pages/PurchaseProduct/PurchaseProduct";
 import { ThemeProvider, createTheme } from '@mui/material/styles';
+import ScrollToTop from './ScrollToTop/ScrollToTop'
 
 const theme = createTheme({
   typography: {
@@ -40,9 +41,9 @@ const theme = createTheme({
 function App() {
   return (
   <ThemeProvider theme={theme}>
-    <div className="App">
       <AuthProvider>
         <Router>
+		<ScrollToTop/>
           <Switch>
             <Route exact path="/">
               <Home></Home>
@@ -68,7 +69,6 @@ function App() {
           </Switch>
         </Router>
       </AuthProvider>
-    </div>
 	</ThemeProvider>
   );
 }
